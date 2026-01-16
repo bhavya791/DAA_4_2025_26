@@ -57,3 +57,28 @@ int main() {
 
     return 0;
 }
+
+/*
+TIME COMPLEXITY ANALYSIS:
+
+In each function call:
+1. The while loop runs log n times and does n work each time → O(n log n)
+2. The for loop and reverse together take O(n)
+
+So, total work in one call = O(n log n)
+
+The function makes 3 recursive calls with input size n/2.
+
+Recurrence Relation:
+T(n) = 3T(n/2) + O(n log n)
+
+Using Master Theorem:
+a = 3, b = 2
+n^(log₂3) ≈ n^1.585
+
+this is Case 1 of Master Theorem.
+
+Final Time Complexity:
+T(n) = O(n^1.585)
+*/
+
